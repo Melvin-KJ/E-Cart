@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   return (
@@ -53,6 +54,19 @@ const Cart = () => {
                   </td>
                 </tbody>
               </table>
+              <div className="float-right mt-5">
+                <button className="bg-red-600 text-white rounded p-2">
+                  EMPTY CART
+                </button>
+                <Link to={'/'} className="bg-blue-600 text-white rounded p-3 ms-3">SHOP MORE</Link>
+              </div>
+            </div>
+            <div className="col-span-1">
+              <div className="border rounded shadow p-5">
+                <h2 className="text-2xl font-bold">Total Amount : <span className='text-red-600'>$ 250</span></h2>
+                <hr />
+                <button className='bg-green-600 mt-5 w-full rounded p-2 text-white'>CHECKOUT</button>
+              </div>
             </div>
           </div>
         </>

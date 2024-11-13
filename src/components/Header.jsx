@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const Header = () => {
+const Header = ({ insideHome }) => {
   return (
     <nav className="flex bg-violet-600 fixed w-full p-5">
       <Link className="text-white font-bold text-2xl" to={'/'}>
@@ -9,6 +10,7 @@ const Header = () => {
         <i className="fa-solid fa-truck-fast me-1"></i> E Cart{' '}
       </Link>
       <ul className="flex-1 text-right">
+        {insideHome && (
           <li className="list-none inline-block px-5">
             {' '}
             <input
@@ -18,6 +20,7 @@ const Header = () => {
               type="text"
             />{' '}
           </li>
+        )}
         <li className="list-none inline-block px-5">
           {' '}
           <Link to={'/wishlist'} className="text-white font-bold">
